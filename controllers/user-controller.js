@@ -2,7 +2,7 @@ const { User, Thoughts } = require('../models');
 
 
 
-// activity Unit 18 Mini project & Day 3 #24
+// activity Unit 18 Mini project & Day 3 #24 REFER TO LINE 11-12 ON TAGCONTROLLERS AND 21-27
 module.exports = {
     getUser(req, res) {
         User.find({})

@@ -1,5 +1,8 @@
 const { Thoughts, Users, Types } = require('../models');
 
+
+// activity Unit 18 Mini project & Day 3 #24 REFER TO LINE 11-12 ON TAGCONTROLLERS AND 21-21
+
 //GET THOUGHTS
 
 module.exports = {
@@ -37,8 +40,20 @@ createThought(req, res) {
           : res.json('thoughts!')
         )
         .catch((err) => {res.status(500).json(err)});
-    }
+    },
 
+
+//REMOVE THOUGHT
+removeThought(req, res) {
+    Thoughts.findOneAndRemove({_id: req.params.id })
+    .then((thoughts) => 
+    !thoughts
+      ? res.status(404).json({ message: 'No thought with that ID' })
+      : User.findOneAndUpdate({thoughts: req.params.thoughtid},{$pull: { thoughts: req.params.thoughtid} }, {new: true})
+    )
+    
+    .catch((err) => {res.status(500).json(err)});
+},
 
 
 }
