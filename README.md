@@ -10,6 +10,11 @@ No seed data is provided, so you’ll need to create your own data using Insomni
 
 Because this application won’t be deployed, you’ll also need to create a walkthrough video that demonstrates its functionality and all of the following acceptance criteria being met. You’ll need to submit a link to the video and add it to the README of your project.
 
+## Technologies Used:
+Express.js - routing
+MongoDB - database
+Mongoose ODM
+
 ## User Story
 
 ```md
