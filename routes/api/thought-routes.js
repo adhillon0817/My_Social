@@ -15,7 +15,7 @@ router
 
 // /api/thoughts/:thoughtId/reactions
 router
-.route('/:UserId/')
+.route('/:id/')
 .post(createThought);
 
 
