@@ -1,4 +1,4 @@
-const { Thoughts, Users, Types } = require('../models');
+const { Thoughts, User, Types } = require('../models');
 
 
 // activity Unit 18 Mini project & Day 3 #24 REFER TO LINE 11-12 ON TAGCONTROLLERS AND 21-21
@@ -30,7 +30,7 @@ module.exports = {
 createThought(req, res) {
     Thoughts.create(req.body) 
         .then((thoughts) => {
-            return Users.findOneAndUpdate(
+            return User.findOneAndUpdate(
                 {_id:req.body.id}, {$addtoSet: {thoughts: thoughtId}}, {new: true}
             );
         })
@@ -56,4 +56,5 @@ removeThought(req, res) {
 },
 
 
+//
 }
