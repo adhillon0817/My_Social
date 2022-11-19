@@ -24,11 +24,20 @@ module.exports = {
 
 
     createUser(req, res) {
-        User.creat(req.body)
+        User.create(req.body)
         .then((dbUserData) => res.json(dbUserData))
         .catch((err) => res.status(500).json(err));
 
     },
 
-    
+    UpdateUser(req, res) {
+        User.findOneAndUpdate({_id: req.params.id}, {$set:req.body}, {new:true, runValidators:true})
+        .then((user) =>
+        !user
+          ? res.status(404).json({ message: 'No tag with that ID' })
+          : res.json(user)
+        )
+        
+
+    }
 }
