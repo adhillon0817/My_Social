@@ -66,7 +66,18 @@ addReaction(req, res) {
           : res.json('thoughts!')
         )
         .catch((err) => {res.status(500).json(err)});
-}
+},
 
 
-}
+// REMOVE REACTION
+removeReaction(req,res) {
+    Thoughts.findOneAndUpdate({_id: req.params.thoughtId}, {$pull: {reactions:{reactionId: req.params.reactionId}}}, {new: true, runValidators: true} )
+    .then((thoughts) =>
+    !thoughts
+      ? res.status(404).json({ message: 'No user with that ID' })
+      : res.json('thoughts!')
+    )
+    .catch((err) => {res.status(500).json(err)});
+},
+
+};
