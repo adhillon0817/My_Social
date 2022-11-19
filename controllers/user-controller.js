@@ -11,8 +11,14 @@ module.exports = {
     },
 
     getUserbyId(req, res) {
-        User.find({})
+        User.findOne({_id: req.params.id})
         .select('-__v')
-        
+      .then((user) =>
+        !user
+          ? res.status(404).json({ message: 'No tag with that ID' })
+          : res.json(user)
+      )
+
+      .catch((err) => res.status(500).json(err));
     }
 }
