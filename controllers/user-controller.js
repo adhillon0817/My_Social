@@ -46,13 +46,25 @@ module.exports = {
 
     //REMOVE USER
     removeUser(req, res) {
-        User.findOneAndRemove({_id: req.params.userId })
+        User.findOneAndRemove({_id: req.params.id })
         .then((users) => 
         !users
           ? res.status(404).json({ message: 'No user with that ID' })
-          : User.findOneAndUpdate({User: req.params.userId},{$pull: { users: req.params.userId } }, {new: true})
+          : User.findOneAndUpdate({User: req.params.userId},{$pull: { users: req.params.id} }, {new: true})
         )
         
+        .catch((err) => {res.status(500).json(err)});
+    },
+
+
+    //ADDING FRIEND
+    addFriends(req,res){
+        User.findOneAndUpdate({_id: req.params.id}, {$addToSet: {friends: req.params.friendId}},{new: true, runValidators: true})
+        .then((users) =>
+        !users
+          ? res.status(404).json({ message: 'No friend with that ID' })
+          : res.json(users)
+        )
         .catch((err) => {res.status(500).json(err)});
     },
 }
