@@ -78,6 +78,6 @@ removeReaction(req,res) {
       : res.json('thoughts!')
     )
     .catch((err) => {res.status(500).json(err)});
-},
+}
 
 };
