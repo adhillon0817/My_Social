@@ -65,7 +65,7 @@ addReaction(req, res) {
           ? res.status(404).json({ message: 'No user with that ID' })
           : res.json('thoughts!')
         )
-        .catch((err) => {res.status(500).json(err)});
+        .catch((err) => {res.status(500).json(err)}));
 },
 
 
