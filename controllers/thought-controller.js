@@ -13,7 +13,7 @@ module.exports = {
     },
 
 // GET THOUGHT BY ID
-    getThoughtbyId(req, res) {
+    getThoughtById(req, res) {
         Thought.findOne({_id: req.params.thoughtid})
         .select("-__v")
       .then((thoughts) =>
