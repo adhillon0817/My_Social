@@ -4,13 +4,13 @@ const { User, Thought } = require('../models');
 
 // activity Unit 18 Mini project & Day 3 #24 REFER TO LINE 11-12 ON TAGCONTROLLERS AND 21-27
 module.exports = {
-    getUser(req, res) {
+    getUsers(req, res) {
         User.find({})
         .then((users) => res.json(users))
         .catch((err) => res.status(500).json(err));
     },
 
-    getUserById(req, res) {
+    getUsersById(req, res) {
         User.findOne({_id: req.params.userid})
         .select('-__v')
       .then((users) =>
