@@ -18,7 +18,7 @@ router
 
 // get user by id and change user
 router
-.route('/:id')
+.route('/:userid')
 .get(getUsersById)
 .delete(removeUser)
 .put(updateUser)
@@ -26,11 +26,12 @@ router
 
 //adding and deleting user friends
 router
-.route("/:id/friends/:friendId")
+.route("/:userid/friends/:friendId")
 .post(addFriends)
+
+router
+.route("/:userid/friends/:friendId")
 .delete(removeFriends);
-
-
 
 
 

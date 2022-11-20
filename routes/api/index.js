@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const thoughtRoutes = require('./thought-routes')
-const usersRoutes = requre('./user-routes')
+const userRoutes = requre('./user-routes')
 
 //path to thoughts routes
 router
@@ -9,7 +9,7 @@ router
 
 //path to user routes
 router
-.use('/users', usersRoutes);
+.use('/users', userRoutes);
 
 
 

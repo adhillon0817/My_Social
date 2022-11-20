@@ -1,4 +1,4 @@
-const { User, Thoughts } = require('../models');
+const { User, Thought } = require('../models');
 
 
 
@@ -10,8 +10,8 @@ module.exports = {
         .catch((err) => res.status(500).json(err));
     },
 
-    getUserbyId(req, res) {
-        User.findOne({_id: req.params.id})
+    getUserById(req, res) {
+        User.findOne({_id: req.params.userid})
         .select('-__v')
       .then((users) =>
         !users
@@ -33,7 +33,7 @@ module.exports = {
 
 //UPDATE USER
     updateUser(req, res) {
-        User.findOneAndUpdate({_id: req.params.id}, {$set:req.body}, {new:true, runValidators:true})
+        User.findOneAndUpdate({_id: req.params.userid}, {$set:req.body}, {new:true, runValidators:true})
         .then((users) =>
         !users
           ? res.status(404).json({ message: 'No user with that ID' })
@@ -46,11 +46,11 @@ module.exports = {
 
     //REMOVE USER
     removeUser(req, res) {
-        User.findOneAndRemove({_id: req.params.id })
+        User.findOneAndRemove({_id: req.params.userid })
         .then((users) => 
         !users
           ? res.status(404).json({ message: 'No user with that ID' })
-          : User.findOneAndUpdate({User: req.params.id},{$pull: { users: req.params.id} }, {new: true})
+          : User.findOneAndUpdate({User: req.params.userid},{$pull: { users: req.params.userid} }, {new: true})
         )
         
         .catch((err) => {res.status(500).json(err)});
