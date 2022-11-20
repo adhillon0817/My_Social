@@ -1,4 +1,4 @@
-const { Thoughts, User, Types } = require('../models');
+const { Thought, User } = require('../models');
 
 
 // activity Unit 18 Mini project & Day 3 #24 REFER TO LINE 11-12 ON TAGCONTROLLERS AND 21-21
@@ -7,15 +7,15 @@ const { Thoughts, User, Types } = require('../models');
 
 module.exports = {
     getThoughts(req, res) {
-        Thoughts.find()
+        Thought.find()
         .then((thoughts) => res.json(thoughts))
         .catch((err) => res.status(500).json(err));
     },
 
 // GET THOUGHT BY ID
     getThoughtbyId(req, res) {
-        Thoughts.findOne({_id: req.params.thoughtid})
-        .select('-__v')
+        Thought.findOne({_id: req.params.thoughtid})
+        .select("-__v")
       .then((thoughts) =>
         !thoughts
           ? res.status(404).json({ message: 'No thoughts with that ID' })
@@ -27,15 +27,15 @@ module.exports = {
 
 //CREATE THOUGHT
 
-createThought(req, res) {
-    Thoughts.create(req.body) 
-        .then((thoughts) => {
+createThoughts(req, res) {
+    Thought.create(req.body) 
+        .then((thought) => {
             return User.findOneAndUpdate(
-                {_id:req.body.id}, {$addtoSet: {thoughts: thoughtId}}, {new: true}
+                {_id:req.body.userid}, {$addtoSet: {thoughts: thought._id}}, {new: true}
             );
         })
-        .then((users) =>
-        !users
+        .then((user) =>
+        !user
           ? res.status(404).json({ message: 'No user with that ID' })
           : res.json('thoughts!')
         )
@@ -45,11 +45,11 @@ createThought(req, res) {
 
 //REMOVE THOUGHT
 removeThought(req, res) {
-    Thoughts.findOneAndRemove({_id: req.params.id })
-    .then((thoughts) => 
-    !thoughts
+    Thought.findOneAndRemove({_id: req.params.thoughtid })
+    .then((thought) => 
+    !thought
       ? res.status(404).json({ message: 'No thought with that ID' })
-      : User.findOneAndUpdate({thoughts: req.params.thoughtid},{$pull: { thoughts: req.params.thoughtid} }, {new: true})
+      : User.findOneAndUpdate({thought: req.params.thoughtid},{$pull: { thoughts: req.params.thoughtid} }, {new: true})
     )
     
     .catch((err) => {res.status(500).json(err)});
@@ -58,12 +58,12 @@ removeThought(req, res) {
 
 //ADD REACTION
 addReaction(req, res) {
-    Thoughts.findOneAndUpdate(
-        ({_id: req.params.thoughtId}, {$addtoSet:{reactions: req.body}},{new: true, runValidators: true})
-        .then((thoughts) =>
-        !thoughts
+    Thought.findOneAndUpdate(
+        ({_id: req.params.thoughtid}, {$addtoSet:{reactions: req.body}},{new: true, runValidators: true})
+        .then((thought) =>
+        !thought
           ? res.status(404).json({ message: 'No user with that ID' })
-          : res.json('thoughts!')
+          : res.json(thought)
         )
         .catch((err) => {res.status(500).json(err)}));
 },
@@ -71,11 +71,11 @@ addReaction(req, res) {
 
 // REMOVE REACTION
 removeReaction(req,res) {
-    Thoughts.findOneAndUpdate({_id: req.params.thoughtId}, {$pull: {reactions:{reactionId: req.params.reactionId}}}, {new: true, runValidators: true} )
-    .then((thoughts) =>
-    !thoughts
+    Thought.findOneAndUpdate({_id: req.params.thoughtid}, {$pull: {reactions:{reactionid: req.params.reactionid}}}, {new: true, runValidators: true} )
+    .then((thought) =>
+    !thought
       ? res.status(404).json({ message: 'No user with that ID' })
-      : res.json('thoughts!')
+      : res.json(thought)
     )
     .catch((err) => {res.status(500).json(err)});
 }
