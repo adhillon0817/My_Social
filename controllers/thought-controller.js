@@ -71,7 +71,7 @@ addReaction(req, res) {
 
 // REMOVE REACTION
 removeReaction(req,res) {
-    Thought.findOneAndUpdate({_id: req.params.thoughtid}, {$pull: {reactions:{reactionid: req.params.reactionid}}}, {new: true, runValidators: true} )
+    Thought.findOneAndUpdate({_id: req.params.thoughtid}, {$pull: {reactions:{reactionId: req.params.reactionId}}}, {new: true, runValidators: true} )
     .then((thought) =>
     !thought
       ? res.status(404).json({ message: 'No user with that ID' })

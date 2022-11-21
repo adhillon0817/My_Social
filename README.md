@@ -39,6 +39,9 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Mock Up
 
+
+![The following video will show you the get and post of the user](https://drive.google.com/file/d/1tf01IwnjBnvhmsCRZTNIdynPIKGOrSVf/view)
+
 The following animations show examples of the application's API routes being tested in Insomnia.
 
 The following animation shows GET routes to return all users and all thoughts being tested in Insomnia:
