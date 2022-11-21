@@ -44,6 +44,9 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ![The following video will show you the GET and POST of thoughts](https://drive.google.com/file/d/1aUN1jMGFmkckyiwHltX4xYezkw_PUoxs/view)
 
+![The following image will show you the single user information by ID](assets\GETuserbyid.png)
+
+
 
 The following animations show examples of the application's API routes being tested in Insomnia.
 
