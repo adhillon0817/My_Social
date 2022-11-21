@@ -6,8 +6,13 @@ const { User, Thought } = require('../models');
 module.exports = {
     getUser(req, res) {
         User.find({})
-        .then((users) => res.json(users))
-        .catch((err) => res.status(500).json(err));
+        .then((users) => {
+          res.json(users)
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json(err)
+        });
     },
 
     getUserById(req, res) {
