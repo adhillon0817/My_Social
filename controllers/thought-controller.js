@@ -46,11 +46,12 @@ createThoughts(req, res) {
 
 //REMOVE THOUGHT
 removeThought(req, res) {
+  console.log(req.params,"req");
     Thought.findOneAndRemove({_id: req.params.thoughtid })
     .then((thought) => 
     !thought
       ? res.status(404).json({ message: 'No thought with that ID' })
-      : User.findOneAndUpdate({thought: req.params.thoughtid},{$pull: { thoughts: req.params.thoughtid} }, {new: true})
+      : User.findOneAndUpdate({thoughts: req.params.thoughtid},{$pull: { thoughts: req.params.thoughtid} }, {new: true})
     )
     
     .catch((err) => {res.status(500).json(err)});
