@@ -49,6 +49,10 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ![The following video will show you the thought by ID](https://drive.google.com/file/d/1BuVmi0P1y88QBzbAIfjerx81UM6mQ5pC/view)
 
 ![The following video will show you the PUT by ID of a user](https://drive.google.com/file/d/1HzQHY1YbomkspuTiUJ3a5Cbr8L5RitBD/view)
+
+![The following video shows the deletion of the Thought](https://drive.google.com/file/d/1-o7BsqSeif71RHQ5FNylMMhUAohElmJy/view)
+
+
 assets\GETuserbyid.png
 
 
