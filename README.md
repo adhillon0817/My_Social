@@ -42,9 +42,12 @@ TO BEGIN WITH
 Be sure to have MongoDB installed on your machine. Follow the [MongoDB installation guide on The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb) to install MongoDB locally.
 
 NEXT: RUN the command:
-node index.js
 
+
+node index.js
 With this command you will get Insomnia connected and should be able to run the GET POST DELETE and PUT for the USER and THOUGHT!
+
+![The following video will show you how to get set up!](https://drive.google.com/file/d/18BKrLPcbNuhxMjnncGnmI1q0yNGexYyQ/view)
 
 ![The following video will show you the GET and POST of the user](https://drive.google.com/file/d/1tf01IwnjBnvhmsCRZTNIdynPIKGOrSVf/view)
 
