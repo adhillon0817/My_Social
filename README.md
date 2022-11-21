@@ -44,7 +44,11 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ![The following video will show you the GET and POST of thoughts](https://drive.google.com/file/d/1aUN1jMGFmkckyiwHltX4xYezkw_PUoxs/view)
 
-![The following image will show you the single user information by ID](assets\GETuserbyid.png)
+![The following video will show you the single user information by ID](https://drive.google.com/file/d/1MTarJvdvlZ_jBnTm_ZnN6_V_N_WJEPOM/view)
+
+![The following video will show you the thought by ID](https://drive.google.com/file/d/1BuVmi0P1y88QBzbAIfjerx81UM6mQ5pC/view)
+
+assets\GETuserbyid.png
 
 
 
