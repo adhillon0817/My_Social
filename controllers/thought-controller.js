@@ -28,10 +28,11 @@ module.exports = {
 //CREATE THOUGHT
 
 createThoughts(req, res) {
+  console.log(req.body, "req.body")
     Thought.create(req.body) 
         .then((thought) => {
             return User.findOneAndUpdate(
-                {_id:req.body.userid}, {$addtoSet: {thoughts: thought._id}}, {new: true}
+                {_id:req.body.userid}, {$push: {thoughts: thought._id}}, {new: true}
             );
         })
         .then((user) =>
