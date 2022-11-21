@@ -38,55 +38,36 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ```
 
 ## Mock Up
+TO BEGIN WITH 
+Be sure to have MongoDB installed on your machine. Follow the [MongoDB installation guide on The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb) to install MongoDB locally.
 
+NEXT: RUN the command:
+node index.js
+
+With this command you will get Insomnia connected and should be able to run the GET POST DELETE and PUT for the USER and THOUGHT!
 
 ![The following video will show you the GET and POST of the user](https://drive.google.com/file/d/1tf01IwnjBnvhmsCRZTNIdynPIKGOrSVf/view)
 
 ![The following video will show you the GET and POST of thoughts](https://drive.google.com/file/d/1aUN1jMGFmkckyiwHltX4xYezkw_PUoxs/view)
 
-![The following video will show you the single user information by ID](https://drive.google.com/file/d/1MTarJvdvlZ_jBnTm_ZnN6_V_N_WJEPOM/view)
+![The following video will show you the GET user by ID](https://drive.google.com/file/d/1MTarJvdvlZ_jBnTm_ZnN6_V_N_WJEPOM/view)
 
-![The following video will show you the thought by ID](https://drive.google.com/file/d/1BuVmi0P1y88QBzbAIfjerx81UM6mQ5pC/view)
+![The following video will show you GET thought by ID](https://drive.google.com/file/d/1BuVmi0P1y88QBzbAIfjerx81UM6mQ5pC/view)
 
 ![The following video will show you the PUT by ID of a user](https://drive.google.com/file/d/1HzQHY1YbomkspuTiUJ3a5Cbr8L5RitBD/view)
 
-![The following video shows the delete of the Thought](https://drive.google.com/file/d/1-o7BsqSeif71RHQ5FNylMMhUAohElmJy/view)
+![The following video shows the DELETE of the Thought](https://drive.google.com/file/d/1-o7BsqSeif71RHQ5FNylMMhUAohElmJy/view)
 
 ![The following video shows the DELETE of the user](https://drive.google.com/file/d/1PyZn-cOpwNWe4pkf0tTG1tAkDR6fX5Yw/view)
 
-assets\GETuserbyid.png
 
 
-
-The following animations show examples of the application's API routes being tested in Insomnia.
-
-The following animation shows GET routes to return all users and all thoughts being tested in Insomnia:
-
-![Demo of GET routes to return all users and all thoughts being tested in Insomnia.](./Assets/18-nosql-homework-demo-01.gif)
-
-The following animation shows GET routes to return a single user and a single thought being tested in Insomnia:
-
-![Demo that shows GET routes to return a single user and a single thought being tested in Insomnia.](./Assets/18-nosql-homework-demo-02.gif)
-
-The following animation shows the POST, PUT, and DELETE routes for users being tested in Insomnia:
-
-![Demo that shows the POST, PUT, and DELETE routes for users being tested in Insomnia.](./Assets/18-nosql-homework-demo-03.gif)
-
-In addition to this, your walkthrough video should show the POST, PUT, and DELETE routes for thoughts being tested in Insomnia.
-
-The following animation shows the POST and DELETE routes for a user’s friend list being tested in Insomnia:
-
-![Demo that shows the POST and DELETE routes for a user’s friend list being tested in Insomnia.](./Assets/18-nosql-homework-demo-04.gif)
-
-In addition to this, your walkthrough video should show the POST and DELETE routes for reactions to thoughts being tested in Insomnia.
-
-## Getting Started
-
-Be sure to have MongoDB installed on your machine. Follow the [MongoDB installation guide on The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb) to install MongoDB locally.
-
-Use the following guidelines to set up your models and API routes:
 
 ### Models
+
+THE FOLLOW SET UP UP WAS USED!
+
+
 
 **User**:
 
@@ -226,79 +207,8 @@ This will not be a model, but rather will be used as the `reaction` field's subd
 
 * `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
 
-## Grading Requirements
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Deliverables: 10%
-
-* Your GitHub repository containing your application code.
-
-### Walkthrough Video: 37%
-
-* A walkthrough video that demonstrates the functionality of the social media API must be submitted, and a link to the video should be included in your README file.
-
-  * The walkthrough video must show all of the technical acceptance criteria being met.
-
-  * The walkthrough video must demonstrate how to start the application’s server.
-
-  * The walkthrough video must demonstrate GET routes for all users and all thoughts being tested in Insomnia.
-
-  * The walkthrough video must demonstrate GET routes for a single user and a single thought being tested in Insomnia.
-
-  * The walkthrough video must demonstrate POST, PUT, and DELETE routes for users and thoughts being tested in Insomnia.
-
-  * Walkthrough video must demonstrate POST and DELETE routes for a user’s friend list being tested in Insomnia.
-
-  * Walkthrough video must demonstrate POST and DELETE routes for reactions to thoughts being tested in Insomnia.
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-  * Uses the [Mongoose package](https://www.npmjs.com/package/mongoose) to connect to a MongoDB database.
-
-  * Includes User and Thought models outlined in the Challenge instructions.
-
-  * Includes schema settings for User and Thought models as outlined in the Challenge instructions.
-
-  * Includes Reactions as the `reaction` field's subdocument schema in the Thought model.
-
-  * Uses functionality to format queried timestamps properly.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a high-quality README with description and a link to a walkthrough video.
-
-### Bonus: +10 Points
-
-* Application deletes a user's associated thoughts when the user is deleted.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* A walkthrough video demonstrating the functionality of the application and all of the acceptance criteria being met.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+## AUTHOR
+Avleen Kaur Dhillon:
+ LINK TO GITHHUB https://github.com/adhillon0817
+ LINK TO REPO    https://github.com/adhillon0817/My_Social.git
