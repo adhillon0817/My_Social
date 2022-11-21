@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const moment = require('moment');
 const Reaction = require('./Reaction');
-
+// WHEN ADDING A THOUGHT IN INSOMNIA "thoughtText" "createdAt" and "username"
 const thoughtSchema = new Schema(
 {
     thoughtText: {

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+//all functions in user controllers must match functions
 const {
     getUser,
     getUserById,
@@ -9,6 +10,8 @@ const {
     removeFriends
 } = require('../../controllers/user-controller')
 
+
+////USE THE BOTTOM FOR GET PUT DELETE and POST paths
 // /api/users creation
 router
 .route('/')
@@ -28,6 +31,7 @@ router
 router
 .route("/:userid/friends/:friendId")
 .post(addFriends)
+
 
 router
 .route("/:userid/friends/:friendId")

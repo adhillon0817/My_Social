@@ -1,4 +1,5 @@
 const router = require('express').Router();
+//the following are connected to the functions in the thoughtcontroller! Make sure they are matching in the exact way
 const {
     getThoughts,
     getThoughtById,
@@ -8,18 +9,20 @@ const {
     removeReaction,
 } = require('../../controllers/thought-controller');
 
-// /api/thoughts 
+//Insert this to insomnia when you do GET or POST /api/thoughts 
 router
 .route('/')
 .get(getThoughts)
 .post(createThoughts)
-// /api/thoughts/:thoughtId/reactions
 
 
-// .post(createThought);
+
+
 
 
 // /api/thoughts/:thoughtId 
+
+//IN INSOMNIA when doing GET PUT and DELETE use the following to complete the action
 router
 .route('/:thoughtid')
 .get(getThoughtById)

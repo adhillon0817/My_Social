@@ -1,5 +1,6 @@
 const { Schema, Types } = require('mongoose');
 
+//WHEN ADDING A REACTION you need "reactionBody", "username", and "createdAt"
 const reactionSchema = new Schema(
     {
         reactionId : {
