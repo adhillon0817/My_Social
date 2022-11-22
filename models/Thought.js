@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 const moment = require('moment');
 const Reaction = require('./Reaction');
 // WHEN ADDING A THOUGHT IN INSOMNIA "thoughtText" "createdAt" and "username"
+//thoughtText createdAt username reactions
 const thoughtSchema = new Schema(
 {
     thoughtText: {
@@ -33,7 +34,7 @@ const thoughtSchema = new Schema(
 }
 
 );
-
+//reactionCount to retrieve length of reactions array
 thoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
 });
